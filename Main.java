@@ -49,6 +49,7 @@ public class Main
                     break;
 
                 case 7:
+                    lungaCorta(quanti, nomi);
                     break;
 
                 case 8:
@@ -113,6 +114,19 @@ public class Main
         }
     }
 
+    private static void lungaCorta(int contatore, String[] x){
+        String corta=x[0];
+        String lunga=x[0];
+        for (int i=1;i<contatore;i++){
+            if (corta.length()>x[i].length()) {
+                corta = x[i];
+            }
+            if (lunga.length()<x[i].length()){
+                lunga=x[i];
+            }
+        }
+        System.out.println("Stringa più lunga: "+lunga+"; Stringa più corta: "+corta);
+    }
     private static void reset(int contatore, String[] x){
         for (int i=0;i<contatore;i++){
             x[i]="";
