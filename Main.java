@@ -25,6 +25,12 @@ public class Main
                     quanti--;
                     break;
 
+                case 3:
+                    System.out.println("quale parola vuoi cercare");
+                    parola=in.next();
+                    presente(parola, nomi, quanti);
+                    break;
+
                 case 6:
                     visualizza(nomi, quanti);
                     System.out.println("");
@@ -43,6 +49,18 @@ public class Main
 
     private static void rimuovi(int posizone, String[] x){
         x[posizone]=null;
+    }
+
+    private static void presente(String parola, String[] x, int posizione){
+        boolean presente=false;
+        for (int i=0;i<posizione;i++){
+            if (parola.equals(x[i]))
+                presente=true;
+        }
+        if (presente)
+            System.out.println("la parola è presente");
+        else
+            System.out.println("la parola non è presente");
     }
 
     private static void visualizza(String[] x, int contatore){
