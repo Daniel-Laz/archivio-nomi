@@ -36,6 +36,11 @@ public class Main
                     System.out.println("");
                     break;
 
+                case 8:
+                    reset(quanti, nomi);
+                    quanti=0;
+                    break;
+
                 default:
                     break;
             }
@@ -66,6 +71,12 @@ public class Main
     private static void visualizza(String[] x, int contatore){
         for (int i=0;i<contatore;i++){
             System.out.print(x[i]+"; ");
+        }
+    }
+
+    private static void reset(int contatore, String[] x){
+        for (int i=0;i<contatore;i++){
+            x[i]="";
         }
     }
 
