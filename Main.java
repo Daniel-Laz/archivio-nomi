@@ -14,19 +14,24 @@ public class Main
             switch (selezione){
 
                 case 1:
-                System.out.println("inserisci una parola");
-                parola=in.next();
-                aggiunta(parola, quanti, nomi);
-                quanti++;
-                break;
+                    System.out.println("inserisci una parola");
+                    parola=in.next();
+                    aggiunta(parola, quanti, nomi);
+                    quanti++;
+                    break;
+
+                case 2:
+                    rimuovi(quanti, nomi);
+                    quanti--;
+                    break;
 
                 case 6:
-                visualizza(nomi, quanti);
-                System.out.println("");
-                break;
+                    visualizza(nomi, quanti);
+                    System.out.println("");
+                    break;
 
                 default:
-                break;
+                    break;
             }
 
 
@@ -34,6 +39,10 @@ public class Main
     }
     private static void aggiunta(String parola, int posizione, String[] x){
         x[posizione]=parola;
+    }
+
+    private static void rimuovi(int posizone, String[] x){
+        x[posizone]=null;
     }
 
     private static void visualizza(String[] x, int contatore){
