@@ -35,9 +35,20 @@ public class Main
                     ripetizioni(nomi, quanti);
                     break;
 
+                case 5:
+                    System.out.println("quale parola vuoi modificare?");
+                    parola=in.next();
+                    System.out.println("scrivi la modifica da apportare");
+                    String modifica=in.next();
+                    modifica(parola, modifica, quanti, nomi);
+                    break;
+
                 case 6:
                     visualizza(nomi, quanti);
                     System.out.println("");
+                    break;
+
+                case 7:
                     break;
 
                 case 8:
@@ -87,6 +98,13 @@ public class Main
             if (contatore>0){
                 System.out.println(x[i]+" ha "+contatore+" ripetizione/i;");
             }
+        }
+    }
+
+    private static void modifica(String parola, String modifica, int posizione, String[] x){
+        for (int i=0;i<posizione;i++){
+            if (parola.equals(x[i]))
+                x[i]=modifica;
         }
     }
     private static void visualizza(String[] x, int contatore){
