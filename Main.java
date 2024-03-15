@@ -31,6 +31,10 @@ public class Main
                     presente(parola, nomi, quanti);
                     break;
 
+                case 4:
+                    ripetizioni(nomi, quanti);
+                    break;
+
                 case 6:
                     visualizza(nomi, quanti);
                     System.out.println("");
@@ -67,7 +71,24 @@ public class Main
         else
             System.out.println("la parola non è presente");
     }
-
+    private static void ripetizioni(String[] x, int posizione){
+        for (int i=0;i<posizione;i++){
+            int contatore=0;
+            for (int j=i;j<posizione;j++){
+                if (x[i].equals(x[j])){
+                    contatore ++;
+                }
+            }
+            for (int j=i;j>=0;j--){
+                if (x[i].equals(x[j])){
+                    contatore --;
+                }
+            }
+            if (contatore>0){
+                System.out.println(x[i]+" ha "+contatore+" ripetizione/i;");
+            }
+        }
+    }
     private static void visualizza(String[] x, int contatore){
         for (int i=0;i<contatore;i++){
             System.out.print(x[i]+"; ");
